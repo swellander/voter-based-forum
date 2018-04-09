@@ -14,12 +14,13 @@ describe('postFeedReducer', () => {
     })
 
     test('Should successfully add a post to masterPostFeed state slice', () => {
-        const { title, userName, body, id } = samplePostData;
+        const { title, userName, body, votes, id } = samplePostData;
         action = {
             type: 'ADD_POST',
             title: title,
             userName: userName,
             body: body,
+            votes: votes,
             id: id
         }
 
@@ -28,8 +29,10 @@ describe('postFeedReducer', () => {
                 title: title,
                 userName: userName,
                 body: body,
+                votes: votes,
                 id: id
             }
         })
     })
+
 });

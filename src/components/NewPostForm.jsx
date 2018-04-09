@@ -9,7 +9,6 @@ import { Route } from 'react-router-dom';
 
 
 function NewPostForm(props, context) {
-    console.log(context.history);
     function handleNewPostFormSubmission(event) {
         event.preventDefault();
         const { dispatch } = props;
