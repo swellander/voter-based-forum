@@ -10,13 +10,14 @@ import NewPostForm from './NewPostForm.jsx';
 
 
 class App extends Component {
+
   render() {
     return (
       <div>
         <Header />
         <Switch>
           <Route exact path='/' component={Feed} />
-          <Route path='/newPost' component={NewPostForm} />
+          <Route path='/newPost' render={()=><NewPostForm onNewPostFormSubmission={this.handleNewPostFormSubmission} />} />
           <Route component={Error404} />
         </Switch>
       </div>

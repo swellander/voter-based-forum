@@ -6,7 +6,7 @@ function Post(props) {
         <div>
             <h2><span>UP</span> <span>DOWN</span> {props.votes} | {props.title}</h2>
             <h4><em>User: {props.userName}</em></h4>
-            <p>{props.postBody}</p>
+            <p>{props.body}</p>
             <hr/>
         </div>
     )
@@ -15,7 +15,7 @@ function Post(props) {
 Post.propTypes = {
     title: PropTypes.string,
     userName: PropTypes.string,
-    postBody: PropTypes.string
+    body: PropTypes.string
 }
 
 export default Post;

@@ -5,13 +5,21 @@ import App from './components/App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 import { HashRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import postFeedReducer from './reducers/post-feed-reducer';
 
-
+const store = createStore(postFeedReducer);
+let unsubscribe = store.subscribe(() => 
+    console.log(store.getState())
+)
 
 ReactDOM.render(
     <HashRouter>    
         <MuiThemeProvider>
-            <App />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </MuiThemeProvider>
     </HashRouter>,
 
