@@ -10,9 +10,7 @@ import { Provider } from 'react-redux';
 import postFeedReducer from './reducers/post-feed-reducer';
 
 const store = createStore(postFeedReducer);
-let unsubscribe = store.subscribe(() => 
-    console.log(store.getState())
-)
+
 
 ReactDOM.render(
     <HashRouter>    

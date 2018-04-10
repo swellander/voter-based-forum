@@ -14,6 +14,8 @@ function Feed(props) {
                     votes={post.votes}
                     userName={post.userName}
                     body={post.body}
+                    formattedTime={post.formattedTime}
+                    id={post.id}
                     key={post.id} />
             })}
         </div>

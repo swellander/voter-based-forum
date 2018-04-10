@@ -1,11 +1,11 @@
 import React from 'react';
-import Feed from './Feed.jsx';
 import TextField from 'material-ui/TextField';
 import { withRouter } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
 import v4 from 'uuid';
 import { Route } from 'react-router-dom';
+import Moment from 'moment';
 
 
 function NewPostForm(props, context) {
@@ -17,9 +17,12 @@ function NewPostForm(props, context) {
             title: inputs.title,
             userName: inputs.userName,
             body: inputs.body,
+            votes: 0,
+            timeSubmitted: new Moment(),
             id: v4()
         }
         dispatch(action);
+        console.log(action.timeSubmitted);
     }
 
     //Take the value of material-ui text inputs and maps it to inputs object. This is most likely not best practice. Definitely check in with others to figure out better way. 
@@ -70,4 +73,4 @@ function NewPostForm(props, context) {
     )
 }
 
-export default connect()(NewPostForm);
+export default withRouter(connect()(NewPostForm));
